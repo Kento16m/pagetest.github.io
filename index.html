@@ -3,480 +3,784 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MACRO GYM - Tu mejor opción para entrenar</title>
-    <link rel="stylesheet" href="style.css">
+    <title>KODAKASOFT - Desarrollo Web Profesional</title>
+    <meta name="description" content="Desarrollo web profesional con estética japonesa. Creamos sitios web elegantes y funcionales con la precisión de la filosofía japonesa.">
+    <meta name="keywords" content="desarrollo web, diseño web, UI/UX, React, Next.js, estética japonesa, web development">
+    <meta name="author" content="KODAKASOFT">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KODAKASOFT - Desarrollo Web Profesional">
+    <meta property="og:description" content="Desarrollo web profesional con estética japonesa. Creamos experiencias digitales únicas.">
+    <meta property="og:url" content="https://kodakasoft.com">
+    <meta property="og:site_name" content="KODAKASOFT">
+    <meta property="og:image" content="https://kodakasoft.com/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KODAKASOFT - Desarrollo Web Profesional">
+    <meta name="twitter:description" content="Desarrollo web profesional con estética japonesa.">
+    <meta name="twitter:image" content="https://kodakasoft.com/og-image.jpg">
+    
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="es" href="https://kodakasoft.com/es">
+    <link rel="alternate" hreflang="en" href="https://kodakasoft.com/en">
+    <link rel="alternate" hreflang="ja" href="https://kodakasoft.com/ja">
+    <link rel="alternate" hreflang="fr" href="https://kodakasoft.com/fr">
+    <link rel="alternate" hreflang="de" href="https://kodakasoft.com/de">
+    <link rel="alternate" hreflang="pt" href="https://kodakasoft.com/pt">
+    <link rel="alternate" hreflang="it" href="https://kodakasoft.com/it">
+    <link rel="alternate" hreflang="zh" href="https://kodakasoft.com/zh">
+    <link rel="alternate" hreflang="ko" href="https://kodakasoft.com/ko">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#f97316">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "KODAKASOFT",
+        "url": "https://kodakasoft.com",
+        "logo": "https://kodakasoft.com/logo.png",
+        "description": "Desarrollo web profesional con estética japonesa",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "ES",
+            "addressLocality": "Madrid"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+34-123-456-789",
+            "contactType": "customer service",
+            "email": "hello@kodakasoft.com"
+        },
+        "sameAs": [
+            "https://linkedin.com/company/kodakasoft",
+            "https://github.com/kodakasoft"
+        ]
+    }
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Botón para volver arriba -->
-    <button id="back-to-top" class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+    <!-- Sakura Container -->
+    <div id="sakura-container"></div>
 
-    <header>
-        <nav class="navbar">
-            <div class="navbar-container">
+    <!-- Language Selector Overlay -->
+    <div id="language-selector" class="language-selector-overlay">
+        <div class="language-selector-container">
+            <div class="language-selector-header">
+                <div class="language-selector-logo">
+                    <div class="logo-icon">
+                        <span>コ</span>
+                    </div>
+                    <div class="logo-text">
+                        <h1>KODAKASOFT</h1>
+                        <p>コーダカソフト</p>
+                    </div>
+                </div>
+                <h2 class="language-selector-title" data-i18n="lang.title">Choose your language</h2>
+                <p class="language-selector-subtitle" data-i18n="lang.subtitle">Select your preferred language to continue</p>
+            </div>
+            
+            <div class="language-grid">
+                <button class="language-option" data-lang="en" aria-label="Select English">
+                    <div class="language-flag">🇺🇸</div>
+                    <div class="language-info">
+                        <span class="language-name">English</span>
+                        <span class="language-native">English</span>
+                    </div>
+                    <div class="language-arrow">→</div>
+                </button>
+                
+                <button class="language-option" data-lang="es" aria-label="Select Español">
+                    <div class="language-flag">🇪🇸</div>
+                    <div class="language-info">
+                        <span class="language-name">Español</span>
+                        <span class="language-native">Español</span>
+                    </div>
+                    <div class="language-arrow">→</div>
+                </button>
+                
+                <button class="language-option" data-lang="ja" aria-label="Select Japanese">
+                    <div class="language-flag">🇯🇵</div>
+                    <div class="language-info">
+                        <span class="language-name">Japanese</span>
+                        <span class="language-native">日本語</span>
+                    </div>
+                    <div class="language-arrow">→</div>
+                </button>
+                
+                <button class="language-option" data-lang="fr" aria-label="Select Français">
+                    <div class="language-flag">🇫🇷</div>
+                    <div class="language-info">
+                        <span class="language-name">Français</span>
+                        <span class="language-native">Français</span>
+                    </div>
+                    <div class="language-arrow">→</div>
+                </button>
+                
+                <button class="language-option" data-lang="de" aria-label="Select Deutsch">
+                    <div class="language-flag">🇩🇪</div>
+                    <div class="language-info">
+                        <span class="language-name">Deutsch</span>
+                        <span class="language-native">Deutsch</span>
+                    </div>
+                    <div class="language-arrow">→</div>
+                </button>
+                
+                <button class="language-option" data-lang="pt" aria-label="Select Português">
+                    <div class="language-flag">🇵🇹</div>
+                    <div class="language-info">
+                        <span class="language-name">Português</span>
+                        <span class="language-native">Português</span>
+                    </div>
+                    <div class="language-arrow">→</div>
+                </button>
+                
+                <button class="language-option" data-lang="zh" aria-label="Select Chinese">
+                    <div class="language-flag">🇨🇳</div>
+                    <div class="language-info">
+                        <span class="language-name">Chinese</span>
+                        <span class="language-native">中文</span>
+                    </div>
+                    <div class="language-arrow">→</div>
+                </button>
+                
+                <button class="language-option" data-lang="it" aria-label="Select Italiano">
+                    <div class="language-flag">🇮🇹</div>
+                    <div class="language-info">
+                        <span class="language-name">Italiano</span>
+                        <span class="language-native">Italiano</span>
+                    </div>
+                    <div class="language-arrow">→</div>
+                </button>
+                
+                <button class="language-option" data-lang="ko" aria-label="Select Korean">
+                    <div class="language-flag">🇰🇷</div>
+                    <div class="language-info">
+                        <span class="language-name">Korean</span>
+                        <span class="language-native">한국어</span>
+                    </div>
+                    <div class="language-arrow">→</div>
+                </button>
+            </div>
+            
+            <div class="language-selector-footer">
+                <p data-i18n="lang.footer">🌸 Experience our website in your preferred language 🌸</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen hidden">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span>コ</span>
+            </div>
+            <div class="loading-text-container">
+                <h2 class="loading-text" data-i18n="loading.text">Loading...</h2>
+                <p class="loading-subtext" data-i18n="loading.subtext">Please wait while we prepare your experience</p>
+                <div class="loading-language-info">
+                    <span class="loading-current-lang" data-i18n="loading.language">Language:</span>
+                    <span class="loading-lang-name" id="loading-lang-display">English</span>
+                </div>
+            </div>
+            <div class="loading-progress">
+                <div class="loading-progress-bar">
+                    <div class="loading-progress-fill"></div>
+                </div>
+                <div class="loading-percentage">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navigation">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="logo.png" alt="Logo MACRO GYM">
+                    <div class="logo-icon">
+                        <span>コ</span>
+                    </div>
+                    <div class="logo-text">
+                        <div class="brand-name">KODAKASOFT</div>
+                        <div class="brand-japanese">コーダカソフト</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <a href="#hero" class="nav-link">
+                        <span data-i18n="nav.home">Home</span>
+                        <span class="nav-japanese">ホーム</span>
+                    </a>
+                    <a href="#services" class="nav-link">
+                        <span data-i18n="nav.services">Services</span>
+                        <span class="nav-japanese">サービス</span>
+                    </a>
+                    <a href="#team" class="nav-link">
+                        <span data-i18n="nav.team">Team</span>
+                        <span class="nav-japanese">チーム</span>
+                    </a>
+                    <a href="#portfolio" class="nav-link">
+                        <span data-i18n="nav.portfolio">Portfolio</span>
+                        <span class="nav-japanese">作品集</span>
+                    </a>
+                    <a href="#contact" class="nav-link">
+                        <span data-i18n="nav.contact">Contact</span>
+                        <span class="nav-japanese">連絡先</span>
                     </a>
                 </div>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="maquinas.html" class="nav-link">Máquinas</a></li>
-                    <li class="nav-item"><a href="#boxeo" class="nav-link">Tu espacio</a></li>
-                    <li class="nav-item"><a href="#entrenadores" class="nav-link">Smart Fit Go</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Smartfit App</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Planes Corporativos</a></li>
-                    <li class="nav-item"><a href="#contacto" class="nav-link cta-button">¡Inscríbete ya!</a></li>
-                </ul>
-            </div>
-        </nav>
 
-        <!-- Hero Section con imagen redondeada -->
-        <div class="hero-section">
-            <div class="imagen-redondeada">
-                <img src="imagen1.jpg" alt="Entrenamiento en MACRO GYM">
-                <div class="hero-content">
-                    <h1 class="hero-title">TRANSFORMA TU CUERPO<br>TRANSFORMA TU VIDA</h1>
-                    <p class="hero-subtitle">El mejor gimnasio para alcanzar tus objetivos fitness</p>
-                    <a href="#contacto" class="hero-button">COMIENZA HOY</a>
+                <!-- Language Switcher & CTA -->
+                <div class="nav-actions">
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="language-switcher-btn" id="language-switcher-btn">
+                            <span class="current-lang-flag" id="current-lang-flag">🇪🇸</span>
+                            <span class="current-lang-code" id="current-lang-code">ES</span>
+                            <svg class="language-switcher-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        
+                        <div class="language-dropdown" id="language-dropdown">
+                            <div class="language-dropdown-header">
+                                <span data-i18n="nav.lang.select">Select Language</span>
+                            </div>
+                            <div class="language-dropdown-list">
+                                <button class="language-dropdown-item" data-lang="en">
+                                    <span class="lang-flag">🇺🇸</span>
+                                    <div class="lang-info">
+                                        <span class="lang-name">English</span>
+                                        <span class="lang-native">English</span>
+                                    </div>
+                                </button>
+                                <button class="language-dropdown-item" data-lang="es">
+                                    <span class="lang-flag">🇪🇸</span>
+                                    <div class="lang-info">
+                                        <span class="lang-name">Español</span>
+                                        <span class="lang-native">Español</span>
+                                    </div>
+                                </button>
+                                <button class="language-dropdown-item" data-lang="ja">
+                                    <span class="lang-flag">🇯🇵</span>
+                                    <div class="lang-info">
+                                        <span class="lang-name">Japanese</span>
+                                        <span class="lang-native">日本語</span>
+                                    </div>
+                                </button>
+                                <button class="language-dropdown-item" data-lang="fr">
+                                    <span class="lang-flag">🇫🇷</span>
+                                    <div class="lang-info">
+                                        <span class="lang-name">Français</span>
+                                        <span class="lang-native">Français</span>
+                                    </div>
+                                </button>
+                                <button class="language-dropdown-item" data-lang="de">
+                                    <span class="lang-flag">🇩🇪</span>
+                                    <div class="lang-info">
+                                        <span class="lang-name">Deutsch</span>
+                                        <span class="lang-native">Deutsch</span>
+                                    </div>
+                                </button>
+                                <button class="language-dropdown-item" data-lang="pt">
+                                    <span class="lang-flag">🇵🇹</span>
+                                    <div class="lang-info">
+                                        <span class="lang-name">Português</span>
+                                        <span class="lang-native">Português</span>
+                                    </div>
+                                </button>
+                                <button class="language-dropdown-item" data-lang="zh">
+                                    <span class="lang-flag">🇨🇳</span>
+                                    <div class="lang-info">
+                                        <span class="lang-name">Chinese</span>
+                                        <span class="lang-native">中文</span>
+                                    </div>
+                                </button>
+                                <button class="language-dropdown-item" data-lang="it">
+                                    <span class="lang-flag">🇮🇹</span>
+                                    <div class="lang-info">
+                                        <span class="lang-name">Italiano</span>
+                                        <span class="lang-native">Italiano</span>
+                                    </div>
+                                </button>
+                                <button class="language-dropdown-item" data-lang="ko">
+                                    <span class="lang-flag">🇰🇷</span>
+                                    <div class="lang-info">
+                                        <span class="lang-name">Korean</span>
+                                        <span class="lang-native">한국어</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button class="cta-button" data-i18n="nav.cta">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-menu-header">
+                    <div class="mobile-language-switcher">
+                        <span data-i18n="nav.lang.current">Language:</span>
+                        <select id="mobile-language-select" class="mobile-language-select">
+                            <option value="en">🇺🇸 English</option>
+                            <option value="es">🇪🇸 Español</option>
+                            <option value="ja">🇯🇵 日本語</option>
+                            <option value="fr">🇫🇷 Français</option>
+                            <option value="de">🇩🇪 Deutsch</option>
+                            <option value="pt">🇵🇹 Português</option>
+                            <option value="zh">🇨🇳 中文</option>
+                            <option value="it">🇮🇹 Italiano</option>
+                            <option value="ko">🇰🇷 한국어</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mobile-nav-links">
+                    <a href="#hero" class="mobile-nav-link">
+                        <span data-i18n="nav.home">Home</span>
+                        <span>ホーム</span>
+                    </a>
+                    <a href="#services" class="mobile-nav-link">
+                        <span data-i18n="nav.services">Services</span>
+                        <span>サービス</span>
+                    </a>
+                    <a href="#team" class="mobile-nav-link">
+                        <span data-i18n="nav.team">Team</span>
+                        <span>チーム</span>
+                    </a>
+                    <a href="#portfolio" class="mobile-nav-link">
+                        <span data-i18n="nav.portfolio">Portfolio</span>
+                        <span>作品集</span>
+                    </a>
+                    <a href="#contact" class="mobile-nav-link">
+                        <span data-i18n="nav.contact">Contact</span>
+                        <span>連絡先</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <section id="entrena_aqui" class="entrena_aqui">
-            <div class="section-header" data-aos="fade-up">
-                <h2>ENTRENA EN NUESTRO GYM</h2>
-                <div class="section-divider">
-                    <span></span>
-                    <i class="fas fa-dumbbell"></i>
-                    <span></span>
-                </div>
-                <p>Contamos con equipamientos modernos y bien cuidados</p>
-            </div>
-            <div class="galeria">
-                <div class="card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-image">
-                        <img src="/placeholder.svg?height=250&width=350" alt="Equipamiento de gimnasio">
-                        <div class="card-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Área de Pesas</h3>
-                        <p>Equipamiento de última generación para tu entrenamiento de fuerza.</p>
-                        <a href="#" class="card-link">Ver más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-image">
-                        <img src="/placeholder.svg?height=250&width=350" alt="Área de cardio">
-                        <div class="card-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Zona Cardio</h3>
-                        <p>Máquinas modernas para mejorar tu resistencia cardiovascular.</p>
-                        <a href="#" class="card-link">Ver más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-image">
-                        <img src="/placeholder.svg?height=250&width=350" alt="Área funcional">
-                        <div class="card-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Entrenamiento Funcional</h3>
-                        <p>Espacio dedicado para ejercicios funcionales y de alta intensidad.</p>
-                        <a href="#" class="card-link">Ver más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- Floating Circles -->
+        <div class="hero-background">
+            <div class="floating-circle circle-1"></div>
+            <div class="floating-circle circle-2"></div>
+            <div class="floating-circle circle-3"></div>
+            <div class="floating-circle circle-4"></div>
+        </div>
 
-        <section id="boxeo" class="boxeo">
-            <div class="boxeo-container">
-                <div class="boxeo-imagen" data-aos="fade-right">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Clases de boxeo">
-                    <div class="boxeo-badge">
-                        <span>NUEVO</span>
-                    </div>
-                </div>
-                <div class="boxeo-contenido" data-aos="fade-left">
-                    <h2>Entrena <span class="highlight">BOXEO</span> con nosotros</h2>
-                    <div class="section-divider">
-                        <span></span>
-                        <i class="fas fa-boxing-glove"></i>
-                        <span></span>
-                    </div>
-                    <p>Ofrecemos una variedad de clases para todos los niveles, desde principiantes hasta avanzados. Nuestros entrenadores certificados te guiarán en cada paso del camino para mejorar tu técnica, resistencia y fuerza.</p>
-                    <p>El boxeo no solo es un deporte de combate, sino también una excelente forma de ejercicio cardiovascular que ayuda a quemar calorías, mejorar la coordinación y liberar el estrés. ¡Únete a nuestra comunidad de boxeo y descubre una nueva forma de desafiar tus límites!</p>
-                    <div class="boxeo-features">
-                        <div class="feature">
-                            <i class="fas fa-users"></i>
-                            <span>Clases grupales</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-user-shield"></i>
-                            <span>Entrenadores certificados</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-dumbbell"></i>
-                            <span>Equipamiento profesional</span>
-                        </div>
-                    </div>
-                    <a href="#" class="boton-redondeado">Conoce más <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="entrenadores" class="entrenadores">
-            <div class="section-header" data-aos="fade-up">
-                <h2>NUESTROS ENTRENADORES</h2>
-                <div class="section-divider">
-                    <span></span>
-                    <i class="fas fa-users"></i>
-                    <span></span>
-                </div>
-                <p>Conoce a nuestro equipo de profesionales altamente calificados</p>
-            </div>
-            
-            <div class="turnos-container">
-                <div class="turno-header" data-aos="fade-up">
-                    <div class="turno-icon">
-                        <i class="fas fa-sun"></i>
-                    </div>
-                    <h3>Turno Mañana</h3>
-                    <p>Horario de: 6:00 AM a 12:00 PM</p>
-                </div>
+        <div class="container">
+            <div class="hero-content">
+                <!-- Title -->
+                <h1 class="hero-title" data-i18n="hero.title">
+                    KODAKASOFT
+                </h1>
                 
-                <div class="entrenadores-cards">
-                    <div class="entrenador-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="entrenador-img">
-                            <img src="/placeholder.svg?height=300&width=200" alt="Entrenador Juan Pérez">
-                            <div class="entrenador-social-overlay">
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
-                        <div class="entrenador-info">
-                            <h3>Juan Pérez</h3>
-                            <p class="especialidad">Especialista en musculación</p>
-                            <div class="entrenador-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <p class="descripcion">Con más de 10 años de experiencia en entrenamiento de fuerza y acondicionamiento físico. Certificado en nutrición deportiva y rehabilitación.</p>
-                            <div class="entrenador-social">
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
+                <!-- Subtitle -->
+                <div class="hero-subtitle">
+                    <span data-i18n="hero.subtitle">Professional Web Development</span>
+                    <div class="subtitle-japanese">プロフェッショナルなウェブ開発</div>
+                </div>
+
+                <!-- Description -->
+                <p class="hero-description" data-i18n="hero.description">
+                    We create unique digital experiences with the precision and elegance 
+                    of Japanese philosophy. Every line of code is a work of art.
+                </p>
+
+                <!-- Buttons -->
+                <div class="hero-buttons">
+                    <button class="btn-primary">
+                        <span data-i18n="hero.cta.primary">Start Project</span>
+                        <span class="arrow">→</span>
+                    </button>
+                    <button class="btn-secondary">
+                        <span data-i18n="hero.cta.secondary">View Portfolio</span>
+                        <span class="sparkle">✨</span>
+                    </button>
+                </div>
+
+                <!-- Quote -->
+                <div class="hero-quote">
+                    <blockquote>
+                        "完璧は些細なことの集まりで達成される"
+                        <br>
+                        <em data-i18n="hero.quote">Perfection is achieved through attention to detail</em>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge" data-i18n="services.badge">Services</div>
+                <h2 data-i18n="services.title">Our Services</h2>
+                <p data-i18n="services.description">We offer complete technological solutions with Japanese quality and precision</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Web Development -->
+                <div class="service-card" data-delay="0">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                            <path d="M2 2l7.586 7.586"/>
+                            <circle cx="11" cy="11" r="2"/>
+                        </svg>
                     </div>
-                    
-                    <div class="entrenador-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="entrenador-img">
-                            <img src="/placeholder.svg?height=300&width=200" alt="Entrenadora María González">
-                            <div class="entrenador-social-overlay">
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
-                        <div class="entrenador-info">
-                            <h3>María González</h3>
-                            <p class="especialidad">Instructora de cardio y HIIT</p>
-                            <div class="entrenador-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p class="descripcion">Especialista en entrenamiento de alta intensidad y pérdida de peso. Certificada en entrenamiento funcional y pilates.</p>
-                            <div class="entrenador-social">
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
+                    <h3 data-i18n="services.web.title">Web Development</h3>
+                    <p class="service-japanese">ウェブ開発</p>
+                    <p class="service-description" data-i18n="services.web.description">
+                        Modern and responsive websites using the latest technologies 
+                        and development best practices.
+                    </p>
+                    <ul class="service-features">
+                        <li>React & TypeScript</li>
+                        <li data-i18n="services.responsive">Responsive Design</li>
+                        <li data-i18n="services.seo">SEO Optimization</li>
+                        <li data-i18n="services.performance">Optimized Performance</li>
+                    </ul>
+                    <div class="service-cta">
+                        <span data-i18n="services.more">Learn more →</span>
                     </div>
                 </div>
-                
-                <div class="turno-header" data-aos="fade-up">
-                    <div class="turno-icon">
-                        <i class="fas fa-cloud-sun"></i>
+
+                <!-- UI/UX Design -->
+                <div class="service-card" data-delay="1">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
                     </div>
-                    <h3>Turno Tarde</h3>
-                    <p>Horario de: 12:00 PM a 6:00 PM</p>
+                    <h3 data-i18n="services.design.title">UI/UX Design</h3>
+                    <p class="service-japanese">デザイン</p>
+                    <p class="service-description" data-i18n="services.design.description">
+                        Intuitive and attractive user experiences inspired 
+                        by Japanese minimalist design principles.
+                    </p>
+                    <ul class="service-features">
+                        <li data-i18n="services.prototyping">Interactive Prototyping</li>
+                        <li>Design Systems</li>
+                        <li data-i18n="services.research">UX Research</li>
+                        <li data-i18n="services.aesthetic">Japanese Aesthetics</li>
+                    </ul>
+                    <div class="service-cta">
+                        <span data-i18n="services.more">Learn more →</span>
+                    </div>
                 </div>
-                
-                <div class="entrenadores-cards">
-                    <div class="entrenador-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="entrenador-img">
-                            <img src="/placeholder.svg?height=300&width=200" alt="Entrenador Carlos Rodríguez">
-                            <div class="entrenador-social-overlay">
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
-                        <div class="entrenador-info">
-                            <h3>Carlos Rodríguez</h3>
-                            <p class="especialidad">Entrenador de CrossFit</p>
-                            <div class="entrenador-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p class="descripcion">Atleta de élite con experiencia en competiciones nacionales. Especializado en entrenamiento funcional y técnicas olímpicas de levantamiento.</p>
-                            <div class="entrenador-social">
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
+
+                <!-- E-commerce -->
+                <div class="service-card" data-delay="2">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="services.ecommerce.title">E-commerce</h3>
+                    <p class="service-japanese">電子商取引</p>
+                    <p class="service-description" data-i18n="services.ecommerce.description">
+                        Complete online stores with secure payment systems 
+                        and automated inventory management.
+                    </p>
+                    <ul class="service-features">
+                        <li>Shopify & WooCommerce</li>
+                        <li data-i18n="services.payments">Payment Gateways</li>
+                        <li data-i18n="services.inventory">Inventory Management</li>
+                        <li data-i18n="services.analytics">Advanced Analytics</li>
+                    </ul>
+                    <div class="service-cta">
+                        <span data-i18n="services.more">Learn more →</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="servicios">
-            <div class="section-header" data-aos="fade-up">
-                <h2>NUESTROS SERVICIOS</h2>
-                <div class="section-divider">
-                    <span></span>
-                    <i class="fas fa-dumbbell"></i>
-                    <span></span>
-                </div>
-                <p>Descubre todo lo que tenemos para ofrecerte</p>
-            </div>
-
-            <div class="servicios-grid">
-                <div class="servicio-item" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="servicio-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3>Cardio</h3>
-                    <p>Aumenta tu resistencia y mejora tu salud cardiovascular con nuestras modernas máquinas.</p>
-                </div>
-                <div class="servicio-item" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="servicio-icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <h3>Musculación</h3>
-                    <p>Fortalece tus músculos y define tu cuerpo con nuestro equipamiento de última generación.</p>
-                </div>
-                <div class="servicio-item" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="servicio-icon">
-                        <i class="fas fa-running"></i>
-                    </div>
-                    <h3>Entrenamiento Funcional</h3>
-                    <p>Mejora tu movilidad y fuerza con ejercicios prácticos para la vida diaria.</p>
-                </div>
-                <div class="servicio-item" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="servicio-icon">
-                        <i class="fas fa-apple-alt"></i>
-                    </div>
-                    <h3>Nutrición</h3>
-                    <p>Asesoramiento personalizado para optimizar tus resultados con una alimentación adecuada.</p>
+            <!-- CTA Section -->
+            <div class="services-cta">
+                <div class="cta-card">
+                    <h3 data-i18n="services.cta.title">Ready to start your project?</h3>
+                    <p data-i18n="services.cta.subtitle">始めましょう - Let's begin together</p>
+                    <button class="btn-white" data-i18n="services.cta.button">
+                        Contact Now
+                    </button>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <section id="contacto" class="contacto-section">
-        <div class="contacto-container">
-            <div class="mapa-contacto">
-                <div class="mapa" data-aos="fade-right">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.283346115616!2d-57.64150009999999!3d-25.294682599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da7f8dbeed22b%3A0xa048d11532d0d88!2sMacrogym%20Fitness!5e0!3m2!1ses!2spy!4v1742156043360!5m2!1ses!2spy" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="contacto" data-aos="fade-left">
-                    <h2>CONTÁCTANOS</h2>
-                    <div class="section-divider">
-                        <span></span>
-                        <i class="fas fa-envelope"></i>
-                        <span></span>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge" data-i18n="contact.badge">Contact</div>
+                <h2 data-i18n="contact.title">Let's Talk</h2>
+                <p data-i18n="contact.description">We are here to make your digital project a reality</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3 data-i18n="contact.connect">Let's Connect</h3>
+                    <p data-i18n="contact.intro">
+                        Every project is an opportunity to create something extraordinary. 
+                        We would love to hear your ideas and help you materialize them 
+                        with Japanese precision and elegance.
+                    </p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon orange-gradient">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>hello@kodakasoft.com</p>
+                                <span>メール</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon sakura-gradient">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h4 data-i18n="contact.phone">Phone</h4>
+                                <p>+34 123 456 789</p>
+                                <span>電話</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon sunset-gradient">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h4 data-i18n="contact.location">Location</h4>
+                                <p>Madrid, España</p>
+                                <span>所在地</span>
+                            </div>
+                        </div>
                     </div>
-                    <p>Nos encantaría conocer tu opinión, déjanos un mensaje o llámanos a nuestros números habilitados.</p>
-                    <form action="https://formsubmit.co/kentoramirez16@gmail.com" method="POST" />
-                        <div class="form-group">
-                            <div class="form-icon">
-                                <i class="fas fa-user"></i>
+
+                    <div class="contact-quote">
+                        <blockquote data-i18n="contact.quote">
+                            "おもてなし - Sincere hospitality and attention to detail"
+                        </blockquote>
+                        <p data-i18n="contact.commitment">Our commitment to you</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <div class="contact-form-header">
+                        <h3 data-i18n="contact.form.title">Send us a message</h3>
+                        <p data-i18n="contact.form.subtitle">We'll get back to you within 24 hours</p>
+                    </div>
+
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" data-i18n="contact.form.name">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
                             </div>
-                            <input type="text" name="nombre" placeholder="Nombre (*)" required>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-icon">
-                                <i class="fas fa-user"></i>
+                            <div class="form-group">
+                                <label for="lastName" data-i18n="contact.form.lastname">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
                             </div>
-                            <input type="text" name="apellidos" placeholder="Apellidos (*)" required>
                         </div>
+
                         <div class="form-group">
-                            <div class="form-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <input type="email" name="email" placeholder="Email (*)" required>
+                            <label for="email" data-i18n="contact.form.email">Email</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
+
                         <div class="form-group">
-                            <div class="form-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <input type="tel" name="telefono" placeholder="Teléfono">
+                            <label for="company" data-i18n="contact.form.company">Company (optional)</label>
+                            <input type="text" id="company" name="company">
                         </div>
+
                         <div class="form-group">
-                            <div class="form-icon">
-                                <i class="fas fa-comment"></i>
-                            </div>
-                            <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                            <label for="budget" data-i18n="contact.form.budget">Budget Range</label>
+                            <select id="budget" name="budget" required>
+                                <option value="" data-i18n="contact.form.budget.select">Select a range</option>
+                                <option value="5k-10k">€5,000 - €10,000</option>
+                                <option value="10k-25k">€10,000 - €25,000</option>
+                                <option value="25k-50k">€25,000 - €50,000</option>
+                                <option value="50k+">€50,000+</option>
+                            </select>
                         </div>
-                        <input type="hidden" name="_next" value="https://tu-sitio-web.com/gracias.html">
-                        <input type="hidden" name="_subject" value="Nuevo mensaje de MACRO GYM">
-                        <input type="hidden" name="_captcha" value="false">
-                        <button type="submit">
-                            <span>Enviar mensaje</span>
-                            <i class="fas fa-paper-plane"></i>
+
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message">Message</label>
+                            <textarea id="message" name="message" rows="4" required 
+                                data-i18n-placeholder="contact.form.message.placeholder"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary form-submit">
+                            <span data-i18n="contact.form.send">Send Message</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+                            </svg>
                         </button>
-                        <div id="message" class="form-message"></div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-main">
-            <div class="footer-content">
-                <div class="footer-info">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Main Footer -->
+            <div class="footer-main">
+                <!-- Brand Column -->
+                <div class="footer-brand">
                     <div class="footer-logo">
-                        <img src="logo.png" alt="Logo MACRO GYM">
+                        <div class="footer-logo-icon">
+                            <span>コ</span>
+                        </div>
+                        <div>
+                            <h3>KODAKASOFT</h3>
+                            <p>コーダカソフト</p>
+                        </div>
                     </div>
-                    <p>MACRO GYM es tu mejor opción para alcanzar tus objetivos de entrenamiento con instalaciones modernas y entrenadores profesionales.</p>
+                    
+                    <p class="footer-description" data-i18n="footer.description">
+                        We create extraordinary digital experiences by combining 
+                        modern technology with the Japanese philosophy of perfectionism 
+                        and attention to detail.
+                    </p>
+                    
+                    <div class="footer-heart">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                        <span data-i18n="footer.made">Made with love in Madrid</span>
+                    </div>
                 </div>
+
+                <!-- Links Columns -->
                 <div class="footer-links">
-                    <h3>Enlaces rápidos</h3>
-                    <ul>
-                        <li><a href="#entrena_aqui">Nuestro Gimnasio</a></li>
-                        <li><a href="#boxeo">Clases de Boxeo</a></li>
-                        <li><a href="#entrenadores">Entrenadores</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h3>Información de contacto</h3>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Av. Francisco Acuña De Figueroa casi, Asunción 001102</p>
+                    <!-- Services -->
+                    <div class="footer-section">
+                        <h4 data-i18n="footer.services">Services</h4>
+                        <p class="footer-japanese">サービス</p>
+                        <ul>
+                            <li><a href="#services" data-i18n="services.web.title">Web Development</a></li>
+                            <li><a href="#services" data-i18n="services.design.title">UI/UX Design</a></li>
+                            <li><a href="#services" data-i18n="services.ecommerce.title">E-commerce</a></li>
+                            <li><a href="#contact" data-i18n="footer.consulting">Consulting</a></li>
+                        </ul>
                     </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+595 991 765 892</p>
+
+                    <!-- Company -->
+                    <div class="footer-section">
+                        <h4 data-i18n="footer.company">Company</h4>
+                        <p class="footer-japanese">会社</p>
+                        <ul>
+                            <li><a href="#team" data-i18n="footer.team">Our Team</a></li>
+                            <li><a href="#portfolio" data-i18n="footer.cases">Success Stories</a></li>
+                            <li><a href="#contact" data-i18n="footer.work">Work with Us</a></li>
+                            <li><a href="#about" data-i18n="footer.story">Our Story</a></li>
+                        </ul>
                     </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>info@macrogym.com</p>
+
+                    <!-- Resources -->
+                    <div class="footer-section">
+                        <h4 data-i18n="footer.resources">Resources</h4>
+                        <p class="footer-japanese">リソース</p>
+                        <ul>
+                            <li><a href="#docs" data-i18n="footer.docs">Documentation</a></li>
+                            <li><a href="#support" data-i18n="footer.support">Technical Support</a></li>
+                            <li><a href="#privacy" data-i18n="footer.privacy">Privacy Policy</a></li>
+                            <li><a href="#terms" data-i18n="footer.terms">Terms of Service</a></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="footer-newsletter">
-                    <h3>Suscríbete a nuestro boletín</h3>
-                    <p>Recibe noticias, promociones y consejos fitness directamente en tu correo.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Tu correo electrónico">
-                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                    </form>
                 </div>
             </div>
-            <div class="footer-social">
-                <a href="https://www.facebook.com/" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://api.whatsapp.com/" target="_blank" class="social-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#" target="_blank" class="social-icon">
-                    <i class="fab fa-youtube"></i>
-                </a>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+                <div class="newsletter-content">
+                    <h4>Newsletter</h4>
+                    <p data-i18n="footer.newsletter">Stay up to date with our latest news and updates</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="your@email.com" required>
+                    <button type="submit" data-i18n="footer.subscribe">Subscribe</button>
+                </form>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="copyright">Copyright &copy; 2025 - Todos los Derechos Reservados por MACRO GYM</p>
+
+            <!-- Bottom Footer -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p data-i18n="footer.copyright">&copy; 2024 KODAKASOFT. All rights reserved.</p>
+                    <p class="footer-copyright-japanese">© 2024 コーダカソフト。全著作権所有。</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#privacy" data-i18n="footer.privacy">Privacy</a>
+                    <a href="#terms" data-i18n="footer.terms">Terms</a>
+                    <a href="#cookies" data-i18n="footer.cookies">Cookies</a>
+                    <a href="#accessibility" data-i18n="footer.accessibility">Accessibility</a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Inicializar AOS (Animate On Scroll)
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-
-            // Script para el menú móvil
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            mobileMenu.addEventListener('click', function() {
-                mobileMenu.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-
-            // Cerrar menú al hacer clic en un enlace
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-
-            // Botón para volver arriba
-            const backToTopButton = document.getElementById('back-to-top');
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.add('visible');
-                } else {
-                    backToTopButton.classList.remove('visible');
-                }
-            });
-            
-            backToTopButton.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Formulario de contacto
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                // No prevenimos el evento por defecto para permitir que el formulario se envíe
-                const messageDiv = document.getElementById('message');
-                setTimeout(function() {
-                    messageDiv.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.</div>';
-                    messageDiv.style.display = 'block';
-                }, 1000);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
